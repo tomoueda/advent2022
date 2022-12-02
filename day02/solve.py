@@ -1,4 +1,3 @@
-
 from args import example, actual
 
 rounds = actual.split('\n')
