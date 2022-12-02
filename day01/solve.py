@@ -12,10 +12,9 @@ for line in inp.split('\n'):
         t = 0
     else:
         t += int(line)
-print m 
+print(m)
 
 # part 2
-
 
 t = 0
 cals = []
@@ -26,4 +25,4 @@ for line in inp.split('\n'):
     else:
         t += int(line)
 cals.sort(reverse=True)
-print sum(cals[:3])
+print(sum(cals[:3]))
