@@ -1,7 +1,7 @@
 
 from args import example, example2, actual
 
-lines = actual.split('\n')
+lines = example2.split('\n')
 
 UP = (0, 1)
 DOWN = (0, -1)
@@ -18,7 +18,7 @@ currs = [(0, 0)] * KNOTS
 
 def print_board():
     s = '' 
-    for y in range(-15, 20):
+    for y in range(20, -15, -1):
         for x in range(-15, 20):
             if x == 0 and y == 0:
                 s += 's'
@@ -41,4 +41,5 @@ for line in lines:
             if abs(hop[0]) > 1 or abs(hop[1]) > 1:
                 currs[i] = (curr[0] + sign(hop[0]), curr[1] + sign(hop[1]))
         visited.add(currs[-1])
+    print_board()
 print(len(visited))
