@@ -1,6 +1,5 @@
 from args import example, actual
 from collections import defaultdict
-import heapq
 
 def val(a):
     if a == 'S':
@@ -15,7 +14,7 @@ def eligible(curr, next):
 
 heap = []
 dirs = [(1, 0), (0, -1), (0, 1), (-1, 0)]
-lines = actual.split('\n')
+lines = example.split('\n')
 graph = defaultdict(lambda: None) 
 for j in range(len(lines)):
     for i in range(len(lines[0])):
@@ -27,7 +26,7 @@ for j in range(len(lines)):
 visited = set()
 
 while len(heap) != 0:
-    steps, coor = heapq.heappop(heap)
+    steps, coor = heap.pop(0)
     curr = graph[coor]
     if curr == 'E':
         print(steps)
@@ -39,5 +38,5 @@ while len(heap) != 0:
             if next_elem is None:
                 continue
             if eligible(curr, next_elem):
-                heapq.heappush(heap, (steps + 1, next_coor))
+                heap.append((steps + 1, next_coor))
 
