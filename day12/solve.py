@@ -2,20 +2,20 @@ from args import example, actual
 from collections import defaultdict
 import heapq
 
+def val(a):
+    if a == 'S':
+        return ord('a') 
+    if a == 'E':
+        return ord('z')
+    return ord(a)
+    
+
 def eligible(curr, next):
-#    if next == 'E' and curr != 'z':
-#        return False
-    if curr == 'z' and next == 'E':
-        return True
-    if curr == 'S' and next == 'a':
-        return True
-    if ord(curr) + 1 >= ord(next):
-        return True
-    return False 
+    return val(curr) + 1 >= val(next)
 
 heap = []
 dirs = [(1, 0), (0, -1), (0, 1), (-1, 0)]
-lines = example.split('\n')
+lines = actual.split('\n')
 graph = defaultdict(lambda: None) 
 for j in range(len(lines)):
     for i in range(len(lines[0])):
