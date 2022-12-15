@@ -64,10 +64,11 @@ while True:
 print(num_ston)
 
 s = ''
-for j in range(0, 15):
-    for i in range(490, 510):
+for j in range(0, 300):
+    for i in range(400, 600):
         if (i, j) in graph:
             s += graph[i,j]
         else:
             s += '.'
     s += '\n'
+print(s)
