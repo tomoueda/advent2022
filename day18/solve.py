@@ -1,4 +1,3 @@
-from functools import reduce
 from args import example, actual
 
 dirs = [(0, 1, 0), (1, 0, 0), (0, 0, 1), (-1, 0, 0), (0, -1, 0), (0, 0, -1)]
